@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>On Tap - Beer Journal</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<link href="mobile.css" rel="stylesheet">
+</head>
+<body>
+	<div id="view-container">
+	</div>
+
+	<script id="HomeView" type="text/html">
+		<h1>On Tap</h1>
+		<p>
+			A place to track the suds you sip. 
+			<a href="#AboutView">Learn More</a>
+		</p>
+	</script>
+
+	<script id="AboutView" type="text/html">
+		<h1>
+			<div class="backArrow" onclick="window.history.back();">&larr;</div>
+			About
+		</h1>
+		<p>
+			On Tap is the finest beer journal on the market.....
+		</p>
+	</script>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// get the container
+			var viewContainer = $('#view-container');
+
+			// clear out the hash
+			window.location.hash="";
+
+			// start responding to hash changes
+			$(window).on('hashchange', function(){
+				var hash = window.location.hash.split('#')[1],   // parse the hash
+					viewContent = $('#' + hash).html();			 // get appropriate content
+					view = $('<div/>').append(viewContent);		 // stuff it in a div
+
+				// update the view
+				viewContainer.html(view);	
+			});
+
+			// go to the inital view
+			window.location.hash="HomeView";
+		});
+	</script>
+</body>
+</html>

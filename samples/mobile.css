@@ -1,0 +1,105 @@
+html {
+	font-family: sans-serif;
+	font-size: 10px;
+	color: #333;
+	background-color: #f0f0f0;
+	background-image: url('pattern.png');
+	background-size: 588px 375px;
+}
+
+html * {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	background-color: rgba(0, 0, 0, 0);
+	background-image: -webkit-linear-gradient(bottom, rgb(196, 139, 59) 0%, rgb(240, 168, 67) 100%);
+	box-shadow: rgba(0, 0, 0, 0.359375) 0px 2px 5px 0px, rgba(240, 168, 67, 0.746094) 0px -1px 0px 0px inset;
+	margin-top: 0;
+	padding: 1.5rem;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.backArrow {
+	position: absolute;
+	left: 1rem;
+	top: 1.5rem;
+	font-size: 3rem;
+	line-height: 1.6rem;
+	color: #fff;
+	font-weight: bold;
+}
+
+h2 {
+	padding: 0 1rem;
+	font-size: 1.5rem;
+}
+
+p {
+	padding: 0.5rem 1rem;
+	font-size: 1.8rem;
+	color: #444;
+}
+
+a {
+	color: #2c88cc;
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	position: relative;
+	background-color: #f0f0f0;
+	margin: 1rem;
+	padding: 2rem 1rem;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	box-shadow: rgba(0, 0, 0, 0.359375) 0px 2px 5px 0px;
+	border: .1rem solid rgba(240, 168, 67, 0.246094);
+	color: #333;
+	font-weight: bold;
+}
+
+li[data-nav] strong {
+	color: #2c88cc;
+}
+
+.row-details {
+	border-top: 1px dotted #909090;
+	margin-top: 1rem;
+	font-weight: normal;
+	font-size: 1.4rem;
+}
+
+li[data-nav], li.drillin {
+	padding-right: 2.5rem;
+}
+
+li[data-nav]:after, li.drillin:after {
+	content: "";
+	background-image: url('arrow.png');
+	background-size: 10px 14px;
+	width: 10px;
+	height: 14px;
+	position: absolute;
+	margin-top: -8px;
+	top: 50%;
+	right: 1rem;
+}
+
+li > weak {
+	float: right;
+	color: #909090;
+}

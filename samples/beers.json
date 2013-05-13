@@ -1,0 +1,7 @@
+[
+	{"ID":1,"Name":"Dogfish Head 60 Minute","Brewer":"Dogfish Head","Rating":5,"Pints":10},
+	{"ID":2,"Name":"Victory HopDevil","Brewer":"Victory","Rating":3,"Pints":6},
+	{"ID":3,"Name":"Stone IPA","Brewer":"Stone","Rating":3,"Pints":2},
+	{"ID":4,"Name":"Dogfish Head Aprihop","Brewer":"Dogfish Head","Rating":5,"Pints":2},
+	{"ID":5,"Name":"Coors Light","Brewer":"Coors","Rating":1,"Pints":23}
+]

@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>On Tap - Beer Journal</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<link href="mobile.css" rel="stylesheet">
+</head>
+<body>
+	<div id="view-container">
+	</div>
+
+	<script id="HomeView" type="text/html">
+		<h1>On Tap</h1>
+		<p>
+			A place to track the suds you sip.
+		</p>
+		<ul>
+			<li data-nav="BeersView">Beers</li>
+			<li data-nav="BreweriesView">Breweries</li>
+			<li data-nav="BarsView">Bars</li>
+		</ul>
+	</script>
+
+	<script id="BeersView" type="text/html">
+		<h1><div class="backArrow">&larr;</div>Beers</h1>
+		<ul>
+			<li>Dogfish Head 60 Minute</li>
+			<li>Victory HopDevil</li>
+			<li>Stone IPA</li>
+			<li>Dogfish Aprihop</li>
+			<li>Coors Light</li>
+		</ul>
+	</script>
+
+	<script id="BreweriesView" type="text/html">
+		<h1><div class="backArrow">&larr;</div>Breweries</h1>
+		<ul>
+			<li>Dogfish Head</li>
+			<li>Victory</li>
+			<li>Stone</li>
+			<li>Coors</li>
+		</ul>
+	</script>
+
+	<script id="BarsView" type="text/html">
+		<h1><div class="backArrow">&larr;</div>Bars</h1>
+		<ul>
+			<li>The Brick House</li>
+			<li>Iron Hill</li>
+			<li>Pepperoncini</li>
+		</ul>
+	</script>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var viewContainer = $('#view-container');
+
+			window.location.hash="";
+			$(window).on('hashchange', function(){
+				var hash = window.location.hash.split('#')[1],
+					viewContent = $('#' + hash).html();
+					view = $('<div/>').append(viewContent);
+
+				viewContainer.html(view);
+
+				view.on('click', '[data-nav]', function(){
+					window.location.hash = $(this).data('nav');		
+				})
+
+				$('.backArrow').on('click', function(){
+					window.history.back();
+				});
+			});
+
+			window.location.hash="HomeView";
+		});
+	</script>
+</body>
+</html>
